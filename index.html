@@ -2,9 +2,516 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>首页</title>
+	<title>YOU & ME</title>
+	<style type="text/css">
+		h1{
+		 color:white;
+		  text-align:center;
+		  font-family: 'Dancing Script', cursive;
+		  
+		}
+		h3{
+		  font-family: 'Josefin Slab', serif;
+		  color:white;
+		  text-align:center;
+		}
+		body {
+		    background-color: black;
+		}
+		.heart {	  
+		  width: 10px ;
+		  position:absolute;
+		  left:200px;
+		  top:200px;
+		  text-align:center
+		  background-color:"blue";
+		  width: 10px;
+		  height: 90px;
+		}
+		.heart:before,
+		.heart:after {
+		    position: absolute;
+		    background-color:"blue";
+		    content: "";
+		    left: 50px;
+		    top: 0;
+		    width: 50px;
+		    height: 80px;
+		    background: red;
+		    -moz-border-radius: 50px 50px 0 0;
+		    border-radius: 50px 50px 0 0;
+		    -webkit-transform: rotate(-45deg);
+		       -moz-transform: rotate(-45deg);
+		        -ms-transform: rotate(-45deg);
+		         -o-transform: rotate(-45deg);
+		            transform: rotate(-45deg);
+		    -webkit-transform-origin: 0 100%;
+		       -moz-transform-origin: 0 100%;
+		        -ms-transform-origin: 0 100%;
+		         -o-transform-origin: 0 100%;
+		            transform-origin: 0 100%;
+		  
+		  
+		       background: #fff;
+		     -webkit-animation: random 5s infinite;
+		     animation: random 5s infinite;
+		}
+		@keyframes  random {
+		    15% { background: red; } 
+		    30% { background: yellow; } 
+		    45% { background: green; } 
+		    60% { background: blue; }
+		    75% { background: pink; }  
+		}
+
+		.heart:after {
+		  background-color:"blue";
+		    left: 0;
+		    -webkit-transform: rotate(45deg);
+		       -moz-transform: rotate(45deg);
+		        -ms-transform: rotate(45deg);
+		         -o-transform: rotate(45deg);
+		            transform: rotate(45deg);
+		    -webkit-transform-origin: 100% 100%;
+		       -moz-transform-origin: 100% 100%;
+		        -ms-transform-origin: 100% 100%;
+		         -o-transform-origin: 100% 100%;
+		            transform-origin :100% 100%;
+		}
+
+		.cake{
+		  position:absolute;
+		  top:50%; left:50%;
+		  margin-left:-50px; margin-top:-50px;
+		  width:100px; height:100px;
+		}
+
+		/* ============================================== BASE
+		*/
+
+		.cake:after{
+		  background:rgba(235,227,225,1);
+		  border-radius:100px;
+		  content:"";
+		  position:absolute;
+		  bottom:0; left:0;
+		  width:100px; height:2px;
+		}
+
+		.cake:before{
+
+		}
+
+		/* ============================================== Candle
+		*/
+
+		.velas{
+		  background:rgba(255,255,255,1);
+		  border-radius:100%;
+		  position:absolute;
+		  top:50%; left:50%;
+		  margin-left:-2.5px;
+		  margin-top:-8.33px;
+		  width:5px; height:16.67px;
+		}
+
+		.velas:after,
+		.velas:before{
+		  background:rgba(255,0,0,0.4);
+		  content:"";
+		  position:absolute;
+		  width:100%; height:2.22px;
+		}
+
+		.velas:after{
+		  top:25%; left:0;
+		}
+
+		.velas:before{
+		  top:45%; left:0;
+		}
+
+		.velas1{
+			left:40%;
+		}
+
+		.velas2{
+			left:60%;
+		}
+
+		/* ============================================== Fire
+		*/
+
+		.fuego{
+		  border-radius:100%;
+		  box-shadow:0 0 40px 10px rgba(248,233,209,0.2);
+		  position:absolute;
+		  top:-12px; left:50%;
+		  margin-left:-3.33px;
+		  //margin-top:-5px;
+		  width:6.67px; height:12.5px;
+		}
+
+		.fuego:nth-child(1){
+		  animation:fuego 2s infinite;
+		}
+
+		.fuego:nth-child(2){
+		  animation:fuego 1.5s infinite;
+		}
+
+		.fuego:nth-child(3){
+		  animation:fuego 1s infinite;
+		}
+
+		.fuego:nth-child(4){
+		  animation:fuego 0.5s infinite;
+		}
+
+		.fuego:nth-child(5){
+		  animation:fuego 0.2s infinite;
+		}
+
+		/* ============================================== Animation Fire
+		*/
+
+		@keyframes fuego{
+		  0%{
+		    background:rgba(254,248,97,0.5);
+		    transform:translateY(0) scale(1);
+		  }
+		  50%{
+		    background:rgba(255,50,0,0.1);
+		    transform:translateY(-20px) scale(0);
+		  }
+		  100%{
+		    background:rgba(254,248,97,0.5);
+		    transform:translateY(0) scale(1);
+		  }
+		}
+
+		/* ============================================== Frosting
+		*/
+
+		.cobertura{
+		  background:rgba(236,231,227,1);
+		  border-radius:50px;
+		  position:absolute;
+		  top:60%; left:50%;
+		  margin-left:-27.7px;
+		  margin-top:-5px;
+		  width:55.6px; height:12.5px;
+		  z-index:10;
+		}
+
+		.cobertura:after,
+		.cobertura:before{
+		  background:rgba(236,231,227,1);
+		  border-radius:100px;
+		  content:"";
+		  position:absolute;
+		  width:5px; height:10px;
+		}
+
+		.cobertura:after{
+		  top:6.67px; right:14.28px;
+		}
+
+		.cobertura:before{
+		  top:10px; right:9.1px;
+		}
+
+		/* ============================================== BIZCOCHO
+		*/
+
+		.bizcocho{
+		  background:rgba(109,56,38,1);
+		  position:absolute;
+		  bottom:0; left:50%;
+		  margin-left:-25px;
+		  width:50px; 
+		  height:33.3px;
+		}
+
+		.bizcocho:after,
+		.bizcocho:before{
+		  background:rgba(236,231,227,0.6);
+		  content:"";
+		  position:absolute;
+		  width:100%; 
+		  height:5px;
+		}
+
+		.bizcocho:after{
+		  top:30%; left:0;
+		}
+
+		.bizcocho:before{
+		  top:60%; left:0;
+		}
+
+		/* ============================================== TEXT
+		*/
+
+		p{
+		  font-family: 'Lato', sans-serif;
+		  font-weight: 300;
+		  font-style:italic;
+		  text-align:center;
+		  width:100%;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		.cjr{
+		  color:rgba(108,82,153,1);
+		  font-size:1em;
+		  margin-top:6.8em;
+		}
+
+		p{
+		  color:rgba(236,231,227,0.6);
+		  font-size:0.8em;
+		  line-height:2em;
+		}
+	</style>
 </head>
 <body>
-媳妇，我爱你！
+	<h1>宝宝,<span style="color:red;font-size:48px">2</span>周年快乐</h1>
+	<p style="font-size:30px;color:yellow">CJR&&ZXY</p>
+	<div id = "container">
+	</div>
+	<div class="cake">
+	  <div class="velas velas1">
+	    <div class="fuego"></div>
+	    <div class="fuego"></div>
+	    <div class="fuego"></div>
+	    <div class="fuego"></div>
+	    <div class="fuego"></div>
+	  </div>
+	  <div class="velas velas2">
+	    <div class="fuego"></div>
+	    <div class="fuego"></div>
+	    <div class="fuego"></div>
+	    <div class="fuego"></div>
+	    <div class="fuego"></div>
+	  </div>
+	  <div class="cobertura"></div>
+	  <div class="bizcocho"></div>
+	  <p class="cjr">happy 2nd Anniversary</p>
+	  <p>2015-06-07至2017-06-07</p>
+	</div>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/animejs/1.1.3/anime.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+   		$("#container").append("<div class = 'heart heartO'></div>")
+   		$("#container").append("<div class = 'heart heartT'></div>")
+   		$("#container").append("<div class = 'heart heartTH'></div>")
+   		$("#container").append("<div class = 'heart heartFO'></div>")
+   		$("#container").append("<div class = 'heart heartFI'></div>")
+   		$("#container").append("<div class = 'heart heartS'></div>")
+   		$("#container").append("<div class = 'heart heartSE'></div>")
+	    anime({
+		  targets: '.heartO',
+		  scale: function(el, index) {
+		    return anime.random(.3, .5); 
+		  },      
+		  rotate: {
+		    value: function(el, index) {
+		    return anime.random(-40, 40); 
+		  },
+		    duration: function(el, index) {
+		    return anime.random(400, 2000); 
+		  },
+		    easing: 'easeInOutExpo'
+		  },
+		  delay: 50,
+		  translateX: function(el, index) {
+		    return anime.random(10, 50); 
+		  },
+		   translateY: function(el, index) {
+		    return anime.random(10, 100); 
+		  },  
+		  direction: 'alternate',
+		  elasticity:300,
+		  loop: true      
+	    });
+	    anime({
+		  targets: '.heartT',
+		  scale: function(el, index) {
+		    return anime.random(.3, .5); 
+		  },      
+		  rotate: {
+		    value: function(el, index) {
+		    return anime.random(-40, 40); 
+		  },
+		    duration: function(el, index) {
+		    return anime.random(400, 2000); 
+		  },
+		    easing: 'easeInOutExpo'
+		  },
+		  delay: 50,
+		  translateX: function(el, index) {
+		    return anime.random(10, 50); 
+		  },
+		   translateY: function(el, index) {
+		    return anime.random(10, 100); 
+		  },  
+		  direction: 'alternate',
+		  elasticity:300,
+		  loop: true      
+	    });
+	    anime({
+		  targets: '.heartTH',
+		  scale: function(el, index) {
+		    return anime.random(.3, .5); 
+		  },      
+		  rotate: {
+		    value: function(el, index) {
+		    return anime.random(-40, 40); 
+		  },
+		    duration: function(el, index) {
+		    return anime.random(400, 2000); 
+		  },
+		    easing: 'easeInOutExpo'
+		  },
+		  delay: 50,
+		  translateX: function(el, index) {
+		    return anime.random(10, 50); 
+		  },
+		   translateY: function(el, index) {
+		    return anime.random(10, 100); 
+		  },  
+		  direction: 'alternate',
+		  elasticity:300,
+		  loop: true      
+	   });
+	    anime({
+		  targets: '.heartFO',
+		  scale: function(el, index) {
+		    return anime.random(.3, .5); 
+		  },      
+		  rotate: {
+		    value: function(el, index) {
+		    return anime.random(-40, 40); 
+		  },
+		    duration: function(el, index) {
+		    return anime.random(400, 2000); 
+		  },
+		    easing: 'easeInOutExpo'
+		  },
+		  delay: 50,
+		  translateX: function(el, index) {
+		    return anime.random(10, 50); 
+		  },
+		   translateY: function(el, index) {
+		    return anime.random(10, 100); 
+		  },  
+		  direction: 'alternate',
+		  elasticity:300,
+		  loop: true      
+	   });
+	    anime({
+		  targets: '.heartFI',
+		  scale: function(el, index) {
+		    return anime.random(.3, .5); 
+		  },      
+		  rotate: {
+		    value: function(el, index) {
+		    return anime.random(-40, 40); 
+		  },
+		    duration: function(el, index) {
+		    return anime.random(400, 2000); 
+		  },
+		    easing: 'easeInOutExpo'
+		  },
+		  delay: 50,
+		  translateX: function(el, index) {
+		    return anime.random(10, 50); 
+		  },
+		   translateY: function(el, index) {
+		    return anime.random(10, 100); 
+		  },  
+		  direction: 'alternate',
+		  elasticity:300,
+		  loop: true      
+	   });
+	    anime({
+		  targets: '.heartS',
+		  scale: function(el, index) {
+		    return anime.random(.3, .5); 
+		  },      
+		  rotate: {
+		    value: function(el, index) {
+		    return anime.random(-40, 40); 
+		  },
+		    duration: function(el, index) {
+		    return anime.random(400, 2000); 
+		  },
+		    easing: 'easeInOutExpo'
+		  },
+		  delay: 50,
+		  translateX: function(el, index) {
+		    return anime.random(10, 50); 
+		  },
+		  translateY: function(el, index) {
+		    return anime.random(10, 100); 
+		  },  
+		  direction: 'alternate',
+		  elasticity:300,
+		  loop: true      
+	   });
+	     anime({
+		  targets: '.heartSE',
+		  scale: function(el, index) {
+		    return anime.random(.3, .5); 
+		  },      
+		  rotate: {
+		    value: function(el, index) {
+		    return anime.random(-40, 40); 
+		  },
+		    duration: function(el, index) {
+		    return anime.random(400, 2000); 
+		  },
+		    easing: 'easeInOutExpo'
+		  },
+		  delay: 50,
+		  translateX: function(el, index) {
+		    return anime.random(10, 50); 
+		  },
+		  translateY: function(el, index) {
+		    return anime.random(10, 100); 
+		  },  
+		  direction: 'alternate',
+		  elasticity:300,
+		  loop: true      
+	   });
+
+	    $(".heartO").css("left","10%");
+	    $(".heartO").css("top", "80%");
+
+	    $(".heartT").css("left", "30%");
+	    $(".heartT").css("top", "30%");
+
+	    $(".heartTH").css("left","8%");
+	    $(".heartTH").css("top", "5%");
+
+	    $(".heartFO").css("left", "60%");
+	    $(".heartFO").css("top", "20%");
+
+	    $(".heartFI").css("left","75%");
+	    $(".heartFI").css("top", "8%");
+
+	    $(".heartS").css("left","85%");
+	    $(".heartS").css("top", "70%");
+
+	    $(".heartSE").css("left","50%");
+	    $(".heartSE").css("top", "80%");
+
+	  });
+</script>
 </body>
 </html>
